@@ -1,0 +1,56 @@
+<br>
+<%= button_to '投稿する', root_path, class:'btn btn-primary', method: :get %>
+<br>
+<br>
+
+<%= form_for :user, url: root_path, html: { class: "mb-3" } do |f| %>
+  <div class="mb-3">
+    <%= f.label :email, "メールアドレス", class: "form-label" %>
+    <%= f.email_field :email, class: "form-control", id: "exampleInputEmail1" %>
+    <div class="form-text">あなたのメールアドレスを入力してください</div>
+  </div>
+  <div class="mb-3">
+    <%= f.label :password, "パスワード", class: "form-label" %>
+    <%= f.password_field :password, class: "form-control", id: "exampleInputPassword1" %>
+  </div>
+  <div class="mb-3 form-check">
+    <%= f.check_box :agreement, class: "form-check-input", id: "exampleCheck1" %>
+    <%= f.label :agreement, "同意しますか？", class: "form-check-label", for: "exampleCheck1" %>
+  </div>
+  <%= f.submit "ログイン", class: "btn btn-primary" %>
+<% end %>
+
+<br>
+<br>
+<br>
+
+
+<div class="card" style="width: 18rem;">
+<%= image_tag "cat.jpg", class: "card-img-top", alt: "no image" %>
+<div class="card-body">
+<h5 class="card-title">キャメロン</h5>
+<p class="card-text">この可愛さに敵う人間はいなのにゃ！</p>
+<%= link_to "もっと見る", "#", class: "btn btn-primary" %>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <% @posts.each do |p| %>
+      <div class="col-3">
+        <div class="card" style="width: 13rem;">
+          <%= image_tag p.image, class: "card-img-top", alt: "no image" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= p.name %></h5>
+            <p class="card-text"><%= p.description %></p>
+            <a href="#" class="btn btn-primary"><%= p.btn_msg %></a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

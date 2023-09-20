@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Post.create([
+  {
+    image: "dog1.jpg",
+    name: "Post 1 Title",
+    description: "Description for Post 1",
+    btn_msg: "Read More"
+  },{
+    image: "dog2.jpeg",
+    name: "Post 2 Title",
+    description: "Description for Post 2",
+    btn_msg: "Learn More"
+  },{
+    image: "dog3.jpg",
+    name: "Post 3 Title",
+    description: "Description for Post 3",
+    btn_msg: "View Details"
+  }
+])
